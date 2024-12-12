@@ -1,0 +1,65 @@
+FONCTION PRINCIPALE DE PYGAME :
+
+INITIALISATION DE PYGAME:
+- Cette commande initialise Pygame et doit être appelée avant d'utiliser d'autres fonctionnalités de la bibliothèque.
+
+import pygame
+pygame.init()
+
+
+CREATION DE LA FÊNETRE :
+- Cette commande crée une fenêtre de jeu avec une certaine largeur et hauteur. La fenêtre sera utilisée pour afficher le jeu.
+
+screen = pygame.display.set_mode((largeur, hauteur))  
+
+
+BOUCLE PRINCIPALE DU JEU :
+- La boucle principale du jeu gère les événements Pygame tels que la fermeture de la fenêtre. À l'intérieur de la boucle, vous mettez à jour la logique du jeu et effectuez le rendu.
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    # Logique du jeu et rendu ici
+
+
+AFFICHAGE D'IMAGES :
+- Ces commandes chargent une image depuis un fichier et l'affichent à une certaine position sur l'écran.
+
+image = pygame.image.load("image.png")
+screen.blit(image, (x, y))
+
+
+AFFICHAGE DE TEXTE :
+- Ces commandes permettent d'afficher du texte à une position donnée sur l'écran.
+
+font = pygame.font.Font(None, 36)
+text = font.render("Hello, Pygame!", True, (255, 255, 255))
+screen.blit(text, (x, y))
+
+
+GESTION DU TEMPS :
+- Ces commandes sont utilisées pour contrôler la vitesse de la boucle principale en limitant le nombre d'images par seconde (fps).
+
+clock = pygame.time.Clock()
+clock.tick(fps)
+
+
+INTERACTION AVEC LE CLAVIER ET LA SOURIS :
+- Ces commandes permettent de détecter les touches du clavier enfoncées et de prendre des actions en conséquence.
+
+keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:
+    x -= speed
+
+- Cette commande récupère la position actuelle de la souris.
+
+mouse_pos = pygame.mouse.get_pos()
+
+
+SON :
+- Ces commandes sont utilisées pour gérer le son dans le jeu.
+pygame.mixer.init()
+sound = pygame.mixer.Sound("sound.wav")
+sound.play()
+

@@ -1,0 +1,9 @@
+Bonjour si vous lisez ceci vous vous apprêter surement a tester mon projet Pokémons.
+Voici les touches dont vous aurez besoin dans le programme:
+Pour lancer le jeux il suffit de faire "F5"
+- "Entrée", pour lancer une attaque (c'est la petite flèche qui fait une sorte de L mais coucher souvent il se trouve au dessus de la majuscule gauche)
+- "Shift droit", Pour choisir l'attaque sélectionner avec la molette (elle se situe en dessous de la touche entrée c'est une flèche vers le haut non remplis)
+- La "molette", pour changer les attaques sélectionnées il suffit de faire défiler avec la molette (vers le haut ou vers le bas au choix)
+ATTENTION !!!! Lisez bien ce qu'il y a afficher a l'écran ( sur la fenêtre pygame mais aussi sur la console thonny)
+C'est tout pour moi donc je vous dit bon jeux et amuser vous bien !!👍
+Ah ! Et une seule règle a respecter c'est de S'AMUSER !!!!!

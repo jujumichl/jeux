@@ -1,0 +1,163 @@
+class Jeu:
+importer les images des fonds
+- affDeco (affiche le décors et l'ambiance son (pokedex/combat/intro))-->pygame
+
+- tours (fait un tours ATTENTION la vitesse des pokemons infflue pour savoir lequel attaque en 1er et faire attention a si le pokemon adverse tue notre pokemon avant que celui ci n'ai pu lancer son attaque cette derniere doit être 
+  annuler !!)
+
+- execution (scrute le clavier et la souris)
+
+class Pokemon:
+importer les images des pokemons sur les fonds
+- affPoke (affichage des pokemons et mouvement exécuter)-->pygame
+
+- attaque (toutes les attaque de chaque pokemon avec le type de lattaque préciser)
+
+- stat (statisque(défense, pv, attaque, vitesse, speciale(optionnel)faire une liste de liste (pokemon(stat1,stat2,...),pokemon(stat1,stat2,...))/type de chaque pokemon)
+
+- faiblesse (dégats multiplier par 1,5 pour les types supérieur a d'autre (ex: plante<feu))
+
+- actionDres (détermine l'action que doit faire le pokemon du dresseur)
+
+- actionAdv (détermine l'action que doit faire le pokemon de l'adversaire)
+
+- mort (oblige le dresseur a changer de pokemon si ce dernier est mort et annule l'attaque de ce dernier idem pour l'adversaire)
+
+
+class Dresseur:
+importer les images des différents dresseurs et de l'ennemi ou des ennemis 
+- affDres (affichage des dresseurs)-->pygame
+
+- equipeDres (les 6 pokemons choisis par le joueur) 
+
+- equipeAdv (les 6 pokemons attribuer au hasard a l'adversaire)
+
+- adv (désigne le dresseurs (choisis aleatoirement) adverse parmis la liste de dresseur)
+
+
+
+
+afficher le décors, les dresseurs, les pokemons
+
+mettre le son
+
+faire le tours en fonction de la vitesse des deux pokemon
+
+attention si pv=0 alors changement obligatoire et affichage de ce dialogue : Dresseur : "Nooooooon ! Tu n'aurais pas du mourir si jeune 😭, tu seras venger par tes camarades."
+
+changement possible mais ça reviens a skip son tours d'attaque donc le pokemon qui arrive prend les degats
+
+attaque de l'adversaire aléatoire
+
+equipe de l'adversaire aleatoire parmis les pokemons
+
+afficher les pokemon dans des boutons
+
+equipe possible avec uniquement 6 pokemon et impossibliter de choisir le même pokemon
+
+dialogue durant le combat/après/en caas de fuite/information: (voice over: "(le nom du pokemon) attaque (nom de l'attaque)." ou dresseur :"(nom du pokemon) reviens." ou dresseur :"(nom du pokemon) vas-y." ou dresseur :"Bravo les amis nous avons réussi !" ou adversaire: "Bien jouer c'était un beau combat mais tu a perdu reviens apres t'être entrainer (nom du dresseur)." ou (en cas de fuite) dresseur : "Je reviendrais je vais chercher du lait !" voice over "(nom du dresseur) n'est jamais revenu malgré les nombreuse année d'attente..." ou (en cas de mort du pokémon) "Nooooooon ! Tu n'aurais pas du mourir si jeune 😭, tu seras venger par tes camarades."//  voice over: "Bonjour cher dresseur comment t'appelle tu ?" voice over : "Très bien (nom du dresseur) montre nous a quoi tu ressemble" voice over : "Chosit ton équipe de 6 pokémon qui t'accompagnera durant ton combat !" voice over: "Connais tu la règle des types ?" if oui : voice over :"Bon courage pour ton combat" if non: voice over "Chaque pokémon a un ou plusieurs type qui lui sont attribuer, comme tu pourras le remarquer chaque attaque a un type associer a lui et donc selon le type d'attaque que tu effectue, l'attaque seras plus ou moins efficace. Par exemple un pokemon de type Eau comme Tortank auras comme faiblesse des attaques de type plante et electrique. Voici un shémas des faiblesse de type :(image de faiblesse de type) J'espère que tu as compris maintenant passons au combat et n'oublie pas la règle des types.".
+
+attaque de débuff appliquer au pokémon= 3 points de stat en moins dans la catégorie (rénitialiser les stats de chaque pokemon a chaque combat)
+
+taux de défense = 0 point = a ce prendre l'attaque de plein fouet et 140= -25% de dégats et 1 point de défense= -0,18% de dégats
+
+taux d'attaque = 0 point = attaque sans plus de dammage et 140= +25% de dammage et 1 point = +0.18% de dammage 
+_________________________________________________________________________________________________________________________________________________
+
+Possibiliter d'influance du joueur :
+
+
+choisir le dresseurs que l'on souhaite (possibiliter de prendre aléatoire)
+
+possibiliter de choisir son nom de dresseur (boite d'écriture)
+
+faiblesse de type avec ","
+fuite possible du dresseurs dans ce cas ce dialogue doit être afficher (Dresseur : "Je reviendrais je vais chercher du lait !") (Voice over "(nom du dresseur) n'est jamais revenu malgré les nombreuse année d'attente...")
+
+dégat de l'attaque la plus forte ( utilisation possile pour chaque pokemon= 5)= 20 dammages
+
+attaque moyenne(utilisation possile pour chaque pokemon= 10) = 10
+
+attaque normale (utilisation possile pour chaque pokemon= 15) = 7
+
+attaque faible ( utilisation possible pour chaque pokémon= infinie) = 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pokémon choisis:
+___________________________________________________________________________________________________________________________________________________________________
+    | Scovilain | Cotovol | Shaymin | Éoko | Sulfura | Granbull | Dracaufeu | Hyporoi | Dracolosse | Symbios | Exagide    | Nymphali| Yveltal | Tortank | Zamazenta
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PV  |    65     |    75   |    100  |   75 |    90   |    90    |     78    |    75   |      91    |    110  |🛡️:60|    95    |    126  |    79   |   92  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ATQ |    108    |    55   |    100  |   50 |    100  |    120   |     84    |    95   |      134   |    65   |🛡️:50|    65   |    131  |    83   |   120 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DEF |    65     |    70   |    100  |   80 |    90   |    75    |     78    |    95   |      95    |    75   |🛡️:140|     65  |    95   |  100    |   140 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+VIT |    75     |    110  |    100  |   65 |    90   |    45    |     100   |    85   |      80    |    30   |🛡️:60|     60   |   99    |    78   |   128 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOT |    486    |   460   |    600  |  455 |   580   |   450    |    534    |    540  |      600   |    490  |  500       |  525    |  680    |   530   |   700    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TYPE|Plante/Feu |Plante/  |Plante   |Psy   |Feu/Vol  |Fée       |Feu/Vol    |Eau/Dragon|Drangon/Vol |Psy     |Acier/      |Fée      |Ténèbre/ |Eau      |Combat/Acier
+    |           |Vol      |         |      |         |          |           |         |            |         |Spectre     |         |Vol      |         |            
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FAI-|Vol/Poison/|Feu/Glace|Feu/Vol/ |Spectre|Roche/Eau|Acier/    |Eau/Roche/ |Fée/Drago|Fée/Dragon/ |Spectre/ |Spectre/ |Acier/     |Fée/Roche |Plante/  |Psy/Vol/Fée
+BLE-|Roche      |Roche/Vol|Glace/   |Insecte|Electric |Poison    |Electrique |         |Glace/Roche |Ténèbre/ |Feu/Sol/ |Poison     |Electric  |Electric |           
+SSE |           |Poison   |Poison/  |Ténèbre|         |          |           |         |            |Insecte  |Ténèbre  |           |Glace     |         |           
+    |           |         |Insecte  |       |         |          |           |         |            |         |         |           |          |         |           
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Classement du plus fort: 
+1er : Zamazenta
+2ème: Yveltal
+3ème: Shaymin/Dracolosse
+4ème: Sulfura
+5: Hyporoi
+6: Dracaufeu
+7: Tortank
+8: Nymphali
+9: Exagide
+10: Symbios
+11: Scovilain 
+12: Cotovol
+13: Éoko
+14: Granbull
+
+
+
+Scovilain : Charge, Vive-Attaque, Grincement, Jet de Sable
+Cotovol : Rugissement, Charge, Chargeur, Ruse
+Shaymin : Pouvoir Lunaire, Choc Mental, Rafale Psy, Croissance
+Éoko : Rayon Chargé, Grincement, Chargeur, Force Poigne
+Sulfura : Griffe, Groz'Yeux, Mimi-Queue, Danse Flamme
+Granbull : Morsure, Groz'Yeux, Chant Canon, Regard Touchant
+Dracaufeu : Flammeche, Rugissement, Griffe, Pistolet à O
+Hyporoi : Pistolet à O, Charge, Souplesse, Coup d'Boule
+Dracolosse : Lézard'O, Colère, Coud'Boue, Draco-Rage
+Symbios : Griffe, Groz'Yeux, Rayon Chargé, Boul'Armure
+Exagide : Tranche, Éclat Magique, Lame-Feuille, Mur Lumière
+Nymphali : Jet de Sable, Vent Féérique, Séduction, Rafale Psy
+Yveltal : Tranche, Cru-Aile, Hurlement, Vent Mauvais
+Tortank : Charge, Mimi-Queue, Pistolet à O, Rugissement
+Zamazenta : Griffe, Groz'Yeux, Tranche, Coup d'Boule
